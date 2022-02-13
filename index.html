@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>devjobs - Home</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <h1 class="logo">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 115 32" aria-hidden="true"><path fill="#fff" d="M7.61 24.08a7.48 7.48 0 0 0 2.84-.53 7 7 0 0 0 2.29-1.5l.1 1.71h4.26V0h-4.5v9.49A7.34 7.34 0 0 0 7.61 7.6 7.28 7.28 0 0 0 3.7 8.67 7.48 7.48 0 0 0 .98 11.6 8.91 8.91 0 0 0 0 15.84a8.91 8.91 0 0 0 .98 4.24A7.48 7.48 0 0 0 3.7 23a7.28 7.28 0 0 0 3.92 1.07Zm1.02-3.96a3.7 3.7 0 0 1-2.85-1.22 4.34 4.34 0 0 1-1.12-3.06 4.33 4.33 0 0 1 1.12-3.06 3.7 3.7 0 0 1 2.85-1.22 3.7 3.7 0 0 1 2.84 1.22 4.34 4.34 0 0 1 1.13 3.06 4.33 4.33 0 0 1-1.13 3.06 3.7 3.7 0 0 1-2.84 1.22Zm20.26 3.96a11.73 11.73 0 0 0 3.4-.54 10.98 10.98 0 0 0 3.58-1.98l-2.72-3.3a7.8 7.8 0 0 1-1.94 1.37 6.05 6.05 0 0 1-2.7.53 4.39 4.39 0 0 1-2.65-.82 4.15 4.15 0 0 1-1.55-2.14H36.5v-1.37a8.38 8.38 0 0 0-1.06-4.25 7.77 7.77 0 0 0-2.9-2.92 8.24 8.24 0 0 0-4.2-1.06 8.38 8.38 0 0 0-4.24 1.07 7.9 7.9 0 0 0-2.95 2.92 8.18 8.18 0 0 0-1.07 4.2 8.15 8.15 0 0 0 1.12 4.27 7.95 7.95 0 0 0 3.11 2.95 9.5 9.5 0 0 0 4.58 1.07Zm2.98-9.41h-7.66a4.05 4.05 0 0 1 1.39-2.23 3.8 3.8 0 0 1 2.5-.88 3.66 3.66 0 0 1 2.43.86 4.06 4.06 0 0 1 1.35 2.25Zm16.27 9.1 6.18-15.85h-4.74l-2.6 7.72q-.3.87-.52 1.77-.29 1.14-.47 2.08h-.07q-.18-1.06-.42-2.1a16.77 16.77 0 0 0-.5-1.76l-2.83-7.7h-4.89l6.49 15.83h4.37ZM58.4 5.06a2.43 2.43 0 0 0 1.81-.7 2.5 2.5 0 0 0 .69-1.83A2.5 2.5 0 0 0 60.21.7a2.7 2.7 0 0 0-3.62 0 2.5 2.5 0 0 0-.69 1.84 2.5 2.5 0 0 0 .69 1.83 2.43 2.43 0 0 0 1.81.7ZM54.88 32a5.73 5.73 0 0 0 4.28-1.51 5.93 5.93 0 0 0 1.49-4.34V7.92h-4.5v17.71a2.26 2.26 0 0 1-.71 1.77 2.6 2.6 0 0 1-1.8.64 4.26 4.26 0 0 1-1.68-.36v3.73a7.94 7.94 0 0 0 2.92.59Zm16.84-7.92A8.5 8.5 0 0 0 76 23.01a7.9 7.9 0 0 0 2.96-2.93 8.26 8.26 0 0 0 1.09-4.24 8.25 8.25 0 0 0-1.09-4.24A7.9 7.9 0 0 0 76 8.67a9.12 9.12 0 0 0-8.57 0 7.89 7.89 0 0 0-2.97 2.93 8.25 8.25 0 0 0-1.09 4.24 8.25 8.25 0 0 0 1.09 4.24A7.89 7.89 0 0 0 67.43 23a8.53 8.53 0 0 0 4.29 1.07Zm0-3.96a3.7 3.7 0 0 1-2.85-1.22 4.34 4.34 0 0 1-1.12-3.06 4.34 4.34 0 0 1 1.12-3.06 3.93 3.93 0 0 1 5.7 0 4.34 4.34 0 0 1 1.12 3.06 4.33 4.33 0 0 1-1.13 3.06 3.7 3.7 0 0 1-2.84 1.22Zm20.79 3.96A7.26 7.26 0 0 0 96.43 23a7.5 7.5 0 0 0 2.7-2.93 8.91 8.91 0 0 0 .99-4.24 8.92 8.92 0 0 0-.99-4.24 7.5 7.5 0 0 0-2.7-2.93 7.26 7.26 0 0 0-3.92-1.07 7.34 7.34 0 0 0-4.99 1.89V0h-4.5v23.76h4.25l.11-1.7a6.98 6.98 0 0 0 2.3 1.5 7.5 7.5 0 0 0 2.83.52Zm-1.02-3.96a3.7 3.7 0 0 1-2.84-1.22 4.34 4.34 0 0 1-1.13-3.06 4.33 4.33 0 0 1 1.13-3.06 3.93 3.93 0 0 1 5.69 0 4.34 4.34 0 0 1 1.12 3.06 4.33 4.33 0 0 1-1.13 3.06 3.7 3.7 0 0 1-2.84 1.22Zm17.3 3.96a7.92 7.92 0 0 0 3.11-.6 5.34 5.34 0 0 0 2.25-1.71 4.33 4.33 0 0 0 .85-2.68 3.81 3.81 0 0 0-.79-2.51 5.96 5.96 0 0 0-1.93-1.54q-1.14-.58-2.22-1a18.28 18.28 0 0 1-1.73-.78 1.11 1.11 0 0 1-.72-.97.7.7 0 0 1 .52-.7 2.96 2.96 0 0 1 .96-.18 6.28 6.28 0 0 1 1.87.36 7.28 7.28 0 0 1 1.79.81l1.98-3.47a9.31 9.31 0 0 0-2.83-1.15 13.27 13.27 0 0 0-2.96-.36 6.8 6.8 0 0 0-4.45 1.3 4.1 4.1 0 0 0-1.57 3.31 3.66 3.66 0 0 0 .74 2.38 5.8 5.8 0 0 0 1.85 1.5q1.07.57 2.2 1.04a16.98 16.98 0 0 1 1.82.87 1.31 1.31 0 0 1 .79 1.16.97.97 0 0 1-.42.8 1.8 1.8 0 0 1-1.11.32 4.88 4.88 0 0 1-2.03-.53 18.98 18.98 0 0 1-2.48-1.43l-2.12 3.43a11.46 11.46 0 0 0 3.3 1.76 10.63 10.63 0 0 0 3.34.57Z"/></svg>
+                <span class="screen-reader-text">devjobs logo</span>
+            </h1>
+            <div class="dark-light-toggle">
+                <div class="container">
+                    <div class="sun"></div>
+                    <div class="toggle"></div>
+                    <div class="moon"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section role="search" class="search-bar">
+        <form action="#" method="get" class="search-bar__form">
+            <div class="container">
+                <input type="text" name="title" id="title" placeholder="Filter by title...">
+                <div class="search-bar__filter-icon"></div>
+                <button type="submit"></button>
+            </div>
+        </form>
+    </section>
+    <main class="main-content">
+        <div class="container">
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #E99210;">
+                        <img src="img/scoot.svg" alt="Scoot logo" aria-hidden="true">
+                        <span class="screen-reader-text">Scoot logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">5h ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Full Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Senior Software Engineer</a></h3>
+                            <div class="card__company">Scoot</div>
+                            <h4 class="card__location">United Kingdom</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #E54D25;">
+                        <img src="img/blogr.svg" alt="Blogr logo" aria-hidden="true">
+                        <span class="screen-reader-text">Blogr logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">20h ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Haskell and PureScript Dev</a></h3>
+                            <div class="card__company">Blogr</div>
+                            <h4 class="card__location">United States</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #34353F;">
+                        <img src="img/vector.svg" alt="Vector logo" aria-hidden="true">
+                        <span class="screen-reader-text">Vector logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1d ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Midlevel Back End Engineer</a></h3>
+                            <div class="card__company">Vector</div>
+                            <h4 class="card__location">Russia</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #2F4FC7;">
+                        <img src="img/office-lite.svg" alt="Office Lite logo" aria-hidden="true">
+                        <span class="screen-reader-text">Office Lite logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">2d ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Full Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Senior Application Engineer</a></h3>
+                            <div class="card__company">Office Lite</div>
+                            <h4 class="card__location">Japan</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #132034;">
+                        <img src="img/pod.svg" alt="Pod logo" aria-hidden="true">
+                        <span class="screen-reader-text">Pod logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">2d ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Remote DevOps Engineer</a></h3>
+                            <div class="card__company">Pod</div>
+                            <h4 class="card__location">Thailand</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #4E1853;">
+                        <img src="img/creative.svg" alt="Creative logo" aria-hidden="true">
+                        <span class="screen-reader-text">Creative logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">4d ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Desktop Support Manager</a></h3>
+                            <div class="card__company">Creative</div>
+                            <h4 class="card__location">Germany</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #4722C6;">
+                        <img src="img/pomodoro.svg" alt="Pomodoro logo" aria-hidden="true">
+                        <span class="screen-reader-text">Pomodoro logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1w ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Full Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">iOS Engineer</a></h3>
+                            <div class="card__company">Pomodoro</div>
+                            <h4 class="card__location">United States</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #21427D;">
+                        <img src="img/maker.svg" alt="Maker logo" aria-hidden="true">
+                        <span class="screen-reader-text">Maker logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1w ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Full Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Senior EJB Developer</a></h3>
+                            <div class="card__company">Maker</div>
+                            <h4 class="card__location">United Kingdom</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #F2DECB;">
+                        <img src="img/coffeeroasters.svg" alt="Coffeeroasters logo" aria-hidden="true">
+                        <span class="screen-reader-text">Coffeeroasters logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1w ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Senior Frontend Developer</a></h3>
+                            <div class="card__company">Coffeeroasters</div>
+                            <h4 class="card__location">Singapore</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #1F1F1F;">
+                        <img src="img/mastercraft.svg" alt="Mastercraft logo" aria-hidden="true">
+                        <span class="screen-reader-text">Mastercraft logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">2w ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Freelance</div>
+                            <h3 class="card__position"><a href="#" class="card__link">App & Website Designer</a></h3>
+                            <div class="card__company">Mastercraft</div>
+                            <h4 class="card__location">United States</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #37C790;">
+                        <img src="img/crowdfund.svg" alt="Crowdfund logo" aria-hidden="true">
+                        <span class="screen-reader-text">Crowdfund logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1mo ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Fullstack Developer</a></h3>
+                            <div class="card__company">Crowdfund</div>
+                            <h4 class="card__location">New Zealand</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article class="card">
+                <div class="container">
+                    <div class="card__logo" style="background-color: #F16718;">
+                        <img src="img/typemaster.svg" alt="Typemaster logo" aria-hidden="true">
+                        <span class="screen-reader-text">Typemaster logo</span>
+                    </div>
+                    <div class="card__content">
+                        <div class="container">
+                            <div class="card__posted-at">1mo ago</div>
+                            <div class="card__oval"></div>
+                            <div class="card__contract">Part Time</div>
+                            <h3 class="card__position"><a href="#" class="card__link">Technical Lead Engineer</a></h3>
+                            <div class="card__company">Typemaster</div>
+                            <h4 class="card__location">United Kingdom</h4>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <button>Load more</button>
+        </div>
+    </main>
+</body>
+</html>
