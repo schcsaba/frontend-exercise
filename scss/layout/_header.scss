@@ -1,9 +1,80 @@
 .main-header {
-    background-image: url(../img/header_bg.svg);
-    background-repeat: no-repeat;
+    background-image: url(../img/header_bg_mobile.svg);
+    background-size: cover;
+    background-position: center;
+    height: 13.6rem;
+    padding-top: 3.2rem;
+    padding-right: 2.4rem;
+    padding-bottom: 7.9rem;
+    padding-left: 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     .logo {
         width: 11.5rem;
         height: 3.2rem;
+    }
+
+    .themeswitcher {
+        display: flex;
+        gap: 1.5rem;
+
+        &__sun {
+            width: 2rem;
+        }
+
+        &__toggle {
+            width: 4.8rem;
+            height: 2.4rem;
+            border: none;
+            border-radius: 1.2rem;
+            background-color: $secondary;
+            display: flex;
+            align-items: center;
+
+            &.dark {
+                justify-content: flex-end;
+            }
+            
+            &:hover,
+            &:focus {
+                background-color: $secondary;
+            }
+        }
+
+        &__circle {
+            width: 1.4rem;
+            height: 1.4rem;
+            display: inline-block;
+            border-radius: 50%;
+            background-color: $primary;
+            transition: background-color .3s;
+        }
+
+        &__moon {
+            width: 1.2rem;
+        }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .main-header {
+        background-image: url(../img/header_bg_tablet.svg);
+        padding-top: 4.2rem;
+        height: 16rem;
+        padding-right: 4rem;
+        padding-bottom: 9.3rem;
+        padding-left: 4rem;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .main-header {
+        background-image: url(../img/header_bg_desktop.svg);
+        padding-top: 4.4rem;
+        padding-right: 16.5rem;
+        padding-bottom: 9rem;
+        padding-left: 16.5rem;
     }
 }
