@@ -1,0 +1,32 @@
+body {
+    display: grid;
+    grid-template-rows: 9.6rem repeat(2, 4rem);
+    grid-template-areas:    "h"
+                            "hs"
+                            "s";
+}
+
+@media screen and (min-width: $tablet) {
+    body {
+        grid-template-rows: 12rem repeat(2, 4rem);
+    }
+}
+
+.container {
+    padding-right: 2.4rem;
+    padding-left: 2.4rem;
+}
+
+@media screen and (min-width: $tablet) {
+    .container {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .container {
+        padding-right: 16.5rem;
+        padding-left: 16.5rem;
+    }
+}
