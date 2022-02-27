@@ -1,4 +1,5 @@
 body {
+    background-color: $secondary-light;
     display: grid;
     grid-template-rows: 9.6rem repeat(2, 4rem);
     grid-template-areas:    "h"

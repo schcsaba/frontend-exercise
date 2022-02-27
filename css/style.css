@@ -202,6 +202,7 @@ h4 {
 }
 
 body {
+  background-color: #f4f6f8;
   display: grid;
   grid-template-rows: 9.6rem repeat(2, 4rem);
   grid-template-areas: "h" "hs" "s";
@@ -259,7 +260,7 @@ body {
   height: 2.4rem;
   border: none;
   border-radius: 1.2rem;
-  background-color: white;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
 }
@@ -267,7 +268,7 @@ body {
   justify-content: flex-end;
 }
 .main-header .themeswitcher__toggle:hover, .main-header .themeswitcher__toggle:focus {
-  background-color: white;
+  background-color: #ffffff;
 }
 .main-header .themeswitcher__circle {
   width: 1.4rem;
@@ -303,23 +304,59 @@ body {
 }
 .searchbar__form {
   display: grid;
-  grid-template-columns: 9.75fr 1fr 2.4fr;
+  grid-template-columns: minmax(11rem, 1fr) repeat(2, max-content);
   gap: 2.4rem;
   align-items: center;
   height: 8rem;
   padding-right: 1.6rem;
-  background-color: white;
+  padding-left: 2.5rem;
+  background-color: #ffffff;
   border-radius: 0.8rem;
   overflow: hidden;
 }
 .searchbar__form input {
   border: none;
-  background-color: white;
-  padding-left: 2.5rem;
-  min-width: 13rem;
+  background-color: #ffffff;
+}
+.searchbar__form input.title_input {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.searchbar__form input.location_input {
+  display: none;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+.searchbar__form input.full_time {
+  width: 2.4rem;
+  height: 2.4rem;
+  cursor: pointer;
+  appearance: none;
+  border-radius: 0.4rem;
+  margin: 0;
+  background-color: #19202d;
+  accent-color: #5964e0;
+  opacity: 0.1;
+}
+.searchbar__form input.full_time:checked {
+  appearance: auto;
+  opacity: 1;
+}
+.searchbar__form .full_time {
+  display: none;
 }
 .searchbar__form svg {
   width: 2rem;
+}
+.searchbar__form svg.magnifying_glass_icon {
+  display: none;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+.searchbar__form svg.location_icon {
+  display: none;
+  width: 1.7rem;
+  height: 2.4rem;
 }
 .searchbar__form button {
   background-color: #5964e0;
@@ -327,15 +364,73 @@ body {
   height: 4.8rem;
   border: none;
   border-radius: 0.8rem;
+  transition: background-color 0.3s;
 }
 .searchbar__form button img {
   width: 2.4rem;
   margin: auto;
 }
+.searchbar__form button .button_text {
+  display: none;
+  color: #ffffff;
+  font-weight: 700;
+}
 .searchbar__form button:hover, .searchbar__form button:focus {
   background-color: #939bf4;
 }
 
+@media screen and (min-width: 48em) {
+  .searchbar__form {
+    grid-template-columns: max-content minmax(11rem, 1fr) max-content minmax(14rem, 1fr) repeat(3, max-content);
+    gap: 1.7rem;
+    padding-left: 2.4rem;
+    padding-right: 1.6rem;
+  }
+  .searchbar__form svg.magnifying_glass_icon, .searchbar__form svg.location_icon {
+    display: block;
+  }
+  .searchbar__form svg.location_icon {
+    margin-left: 0.7rem;
+  }
+  .searchbar__form input.title_input {
+    border-right: 1px solid rgba(110, 128, 152, 0.2);
+  }
+  .searchbar__form input.location_input {
+    display: block;
+    border-right: 1px solid rgba(110, 128, 152, 0.2);
+  }
+  .searchbar__form input.full_time {
+    margin-left: 0.3rem;
+  }
+  .searchbar__form .funnel_icon {
+    display: none;
+  }
+  .searchbar__form .full_time {
+    display: block;
+  }
+  .searchbar__form button {
+    width: 8rem;
+    margin-left: 1rem;
+  }
+  .searchbar__form button img {
+    display: none;
+  }
+  .searchbar__form button .button_text {
+    display: block;
+  }
+}
+@media screen and (min-width: 90em) {
+  .searchbar__form {
+    padding-left: 3.2rem;
+  }
+  .searchbar__form input.full_time {
+    margin-left: 1.5rem;
+  }
+  .searchbar__form button {
+    width: 12.3rem;
+    margin-left: 0.7rem;
+  }
+}
 .card h4 {
   color: var(--primary);
 }

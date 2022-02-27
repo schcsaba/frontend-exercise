@@ -6,11 +6,12 @@
 
     &__form {
         display: grid;
-        grid-template-columns: 9.75fr 1fr 2.4fr;
+        grid-template-columns: minmax(11rem, 1fr) repeat(2, max-content);
         gap: 2.4rem;
         align-items: center;
         height: 8rem;
         padding-right: 1.6rem;
+        padding-left: 2.5rem;
         background-color: $secondary;
         border-radius: .8rem;
         overflow: hidden;
@@ -18,12 +19,54 @@
         input {
             border: none;
             background-color: $secondary;
-            padding-left: 2.5rem;
-            min-width: 13rem;
+
+            &.title_input {
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            &.location_input {
+                display: none;
+                padding-top: 3rem;
+                padding-bottom: 3rem;
+            }
+
+            &.full_time {
+                width: 2.4rem;
+                height: 2.4rem;
+                cursor: pointer;
+                appearance: none;
+                border-radius: 0.4rem;
+                margin: 0;
+                background-color: $primary-dark;
+                accent-color: $primary;
+                opacity: 0.1;
+            }
+
+            &.full_time:checked {
+                appearance: auto;
+                opacity: 1;
+            }
+        }
+
+        .full_time {
+            display: none;
         }
 
         svg {
             width: 2rem;
+
+            &.magnifying_glass_icon {
+                display: none;
+                width: 2.4rem;
+                height: 2.4rem;
+            }
+
+            &.location_icon {
+                display: none;
+                width: 1.7rem;
+                height: 2.4rem;
+            }
         }
 
         button {
@@ -32,10 +75,17 @@
             height: 4.8rem;
             border: none;
             border-radius: .8rem;
+            transition: background-color .3s;
 
             img {
                 width: 2.4rem;
                 margin: auto;
+            }
+
+            .button_text {
+                display: none;
+                color: $secondary;
+                font-weight: 700;
             }
 
             &:hover,
@@ -43,5 +93,88 @@
                 background-color: $primary-light;
             }
         }
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .searchbar {
+
+        &__form {
+            grid-template-columns: max-content minmax(11rem, 1fr) max-content minmax(14rem, 1fr) repeat(3, max-content);
+            gap: 1.7rem;
+            padding-left: 2.4rem;
+            padding-right: 1.6rem;
+
+            svg {
+                &.magnifying_glass_icon,
+                &.location_icon {
+                    display: block;
+                }
+
+                &.location_icon {
+                    margin-left: 0.7rem;
+                }
+            }
+
+            input {
+
+                &.title_input {
+                    border-right: 1px solid rgba(110, 128, 152, 0.2);
+                }
+
+                &.location_input {
+                    display: block;
+                    border-right: 1px solid rgba(110, 128, 152, 0.2);
+                }
+
+                &.full_time {
+                    margin-left: 0.3rem;
+                }
+            }
+
+            .funnel_icon {
+                display: none;
+            }
+
+            .full_time {
+                display: block;
+            }
+
+            button {
+                width: 8rem;
+                margin-left: 1rem;
+
+                img {
+                    display: none;
+                }
+
+                .button_text {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .searchbar {
+
+        &__form {
+            padding-left: 3.2rem;
+
+            input {                
+                &.full_time {
+                    margin-left: 1.5rem;
+                }
+            }
+
+
+            button {
+                width: 12.3rem;
+                margin-left: 0.7rem;
+            }
+        }
+
+
     }
 }
