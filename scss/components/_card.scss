@@ -1,6 +1,12 @@
 .card {
+    padding-right: 3.2rem;
+    padding-bottom: 3.6rem;
+    padding-left: 3.2rem;
+    background-color: $secondary;
+    border-radius: 0.6rem;
+
     h4 {
-        color: var(--primary);
+        color: $primary;
     }
 
     a {
@@ -9,13 +15,44 @@
     }
 
     &__logo {
-        background-color: var(--primary-midnight);
+        background-color: $primary-midnight;
+        width: 5rem;
+        height: 5rem;
+        border-radius: 1.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0.4rem;
+        transform: translateY(-50%);
+    }
+
+    &__oval {
+        width: 0.4rem;
+        height: 0.4rem;
+        display: inline-block;
+        border-radius: 50%;
+        background-color: $secondary-darker;
+    }
+
+    &__when_what {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.4rem;
+        align-items: center;
+        margin-bottom: 2.2rem;
+    }
+
+    &__position {
+        margin-bottom: 2rem;
+    }
+
+    &__company {
+        margin-bottom: 4.6rem;
     }
 
     &__posted-at,
-    &__oval,
     &__contract,
     &__company {
-        color: var(--secondary-darker);
+        color: $secondary-darker;
     }
 }

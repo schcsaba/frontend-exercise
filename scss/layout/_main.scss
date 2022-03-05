@@ -1,0 +1,44 @@
+main {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 6.2rem;
+
+    .card_list {
+        padding-top: 5.7rem;
+        padding-bottom: 3.2rem;
+
+        display: grid;
+        row-gap: 4.9rem;
+    }
+
+    button {
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    main {
+        .card_list {
+            padding-top: 7rem;
+            padding-bottom: 5.6rem;
+
+            row-gap: 6.5rem;
+            column-gap: 1.1rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    main {
+        padding-bottom: 10.4rem;
+
+        .card_list {
+            padding-top: 10.5rem;
+            padding-bottom: 5.6rem;
+            grid-template-columns: repeat(3, 1fr);
+
+            column-gap: 3rem;
+        }
+    }
+}

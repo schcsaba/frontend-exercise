@@ -288,6 +288,41 @@ body {
     padding-bottom: 9rem;
   }
 }
+main {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 6.2rem;
+}
+main .card_list {
+  padding-top: 5.7rem;
+  padding-bottom: 3.2rem;
+  display: grid;
+  row-gap: 4.9rem;
+}
+main button {
+  align-self: center;
+}
+
+@media screen and (min-width: 48em) {
+  main .card_list {
+    padding-top: 7rem;
+    padding-bottom: 5.6rem;
+    row-gap: 6.5rem;
+    column-gap: 1.1rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 90em) {
+  main {
+    padding-bottom: 10.4rem;
+  }
+  main .card_list {
+    padding-top: 10.5rem;
+    padding-bottom: 5.6rem;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
 .searchbar {
   grid-row-start: 2;
   grid-row-end: 4;
@@ -303,7 +338,7 @@ body {
   padding-right: 1.6rem;
   padding-left: 2.5rem;
   background-color: #ffffff;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   overflow: hidden;
 }
 .searchbar__form input {
@@ -325,7 +360,7 @@ body {
   height: 2.4rem;
   cursor: pointer;
   appearance: none;
-  border-radius: 0.4rem;
+  border-radius: 0.3rem;
   margin: 0;
   background-color: #19202d;
   accent-color: #5964e0;
@@ -356,12 +391,8 @@ body {
   height: 2.4rem;
 }
 .searchbar__form button {
-  background-color: #5964e0;
   width: 4.8rem;
   height: 4.8rem;
-  border: none;
-  border-radius: 0.8rem;
-  transition: background-color 0.3s;
 }
 .searchbar__form button img {
   width: 2.4rem;
@@ -369,11 +400,6 @@ body {
 }
 .searchbar__form button .button_text {
   display: none;
-  color: #ffffff;
-  font-weight: 700;
-}
-.searchbar__form button:hover, .searchbar__form button:focus {
-  background-color: #939bf4;
 }
 .searchbar__form .modal {
   display: flex;
@@ -403,7 +429,7 @@ body {
   min-width: 32.7rem;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border-radius: 0.8rem;
+  border-radius: 0.6rem;
   padding-bottom: 2.4rem;
   display: grid;
   align-items: center;
@@ -503,18 +529,69 @@ body {
     margin-left: 0.7rem;
   }
 }
+.card {
+  padding-right: 3.2rem;
+  padding-bottom: 3.6rem;
+  padding-left: 3.2rem;
+  background-color: #ffffff;
+  border-radius: 0.6rem;
+}
 .card h4 {
-  color: var(--primary);
+  color: #5964e0;
 }
 .card a {
   text-decoration: none;
   color: inherit;
 }
 .card__logo {
-  background-color: var(--primary-midnight);
+  background-color: #121721;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.4rem;
+  transform: translateY(-50%);
 }
-.card__posted-at, .card__oval, .card__contract, .card__company {
-  color: var(--secondary-darker);
+.card__oval {
+  width: 0.4rem;
+  height: 0.4rem;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #6e8098;
+}
+.card__when_what {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.4rem;
+  align-items: center;
+  margin-bottom: 2.2rem;
+}
+.card__position {
+  margin-bottom: 2rem;
+}
+.card__company {
+  margin-bottom: 4.6rem;
+}
+.card__posted-at, .card__contract, .card__company {
+  color: #6e8098;
+}
+
+button {
+  width: 14.1rem;
+  height: 4.8rem;
+  background-color: #5964e0;
+  border: none;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s;
+}
+button .button_text {
+  color: #ffffff;
+  font-weight: 700;
+}
+button:hover, button:focus {
+  background-color: #939bf4;
 }
 
 /*# sourceMappingURL=style.css.map */

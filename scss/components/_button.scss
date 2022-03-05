@@ -1,0 +1,18 @@
+button {
+    width: 14.1rem;
+    height: 4.8rem;
+    background-color: $primary;
+    border: none;
+    border-radius: .5rem;
+    transition: background-color .3s;
+
+    .button_text {
+        color: $secondary;
+        font-weight: 700;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $primary-light;
+    }
+}
