@@ -37,11 +37,6 @@
             &.dark {
                 justify-content: flex-end;
             }
-            
-            &:hover,
-            &:focus {
-                background-color: $secondary;
-            }
         }
 
         &__circle {

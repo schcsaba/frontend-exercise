@@ -32,6 +32,7 @@
             }
 
             &.full_time {
+                font-weight: 700;
                 width: 2.4rem;
                 height: 2.4rem;
                 cursor: pointer;
@@ -49,8 +50,13 @@
             }
         }
 
+        .funnel_icon {
+            cursor: pointer;
+        }
+
         .full_time {
             display: none;
+            font-weight: 700;
         }
 
         svg {
@@ -93,6 +99,95 @@
                 background-color: $primary-light;
             }
         }
+
+        .modal {
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(1.1);
+            transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+
+            &__background {
+                background-color: rgba(0, 0, 0, 0.5);
+                position: fixed;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            &__box {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                min-width: 32.7rem;
+                transform: translate(-50%, -50%);
+                background-color: $secondary;
+                border-radius: .8rem;
+                padding-bottom: 2.4rem;
+                display: grid;
+                align-items: center;
+                grid-template-rows: repeat(2, 7.2rem) min-content;
+
+                .form_line {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.7rem;
+
+                    &:first-child {
+                        margin-top: 2.4rem;
+                        margin-bottom: 2.4rem;
+                    }
+                }
+
+                .borderbottom {
+                    border-bottom: $form-border;
+                }
+
+                .location_input {
+                    padding-top: 0;
+                    padding-bottom: 0;
+
+                }
+
+                .full_time {
+                    font-weight: 700;
+                }
+
+                button {
+                    width: 4.8rem;
+                    height: 4.8rem;
+                }
+            }
+
+            &__show {
+                opacity: 1;
+                visibility: visible;
+                transform: scale(1.0);
+                transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+
+                .location_icon,
+                .location_input,
+                .full_time {
+                    display: block;
+                }
+
+                button {
+                    width: 27.9rem;
+                    height: 4.8rem;
+                    
+                    .button_text {
+                        display: inline;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -119,12 +214,12 @@
             input {
 
                 &.title_input {
-                    border-right: 1px solid rgba(110, 128, 152, 0.2);
+                    border-right: $form-border;
                 }
 
                 &.location_input {
                     display: block;
-                    border-right: 1px solid rgba(110, 128, 152, 0.2);
+                    border-right: $form-border;
                 }
 
                 &.full_time {

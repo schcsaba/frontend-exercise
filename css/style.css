@@ -149,23 +149,19 @@ address {
   font-family: "Kumbh Sans";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/kumbh-sans-v10-latin-regular.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("../fonts/kumbh-sans-v10-latin-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/kumbh-sans-v10-latin-regular.woff2") format("woff2"), url("../fonts/kumbh-sans-v10-latin-regular.woff") format("woff"), url("../fonts/kumbh-sans-v10-latin-regular.ttf") format("truetype"), url("../fonts/kumbh-sans-v10-latin-regular.svg#KumbhSans") format("svg");
-  /* Legacy iOS */
+  src: local(""), url("../fonts/kumbh-sans-v10-latin-regular.woff2") format("woff2"), url("../fonts/kumbh-sans-v10-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* kumbh-sans-700 - latin */
 @font-face {
   font-family: "Kumbh Sans";
   font-style: normal;
   font-weight: 700;
-  src: url("../fonts/kumbh-sans-v10-latin-700.eot");
-  /* IE9 Compat Modes */
-  src: local(""), url("../fonts/kumbh-sans-v10-latin-700.eot?#iefix") format("embedded-opentype"), url("../fonts/kumbh-sans-v10-latin-700.woff2") format("woff2"), url("../fonts/kumbh-sans-v10-latin-700.woff") format("woff"), url("../fonts/kumbh-sans-v10-latin-700.ttf") format("truetype"), url("../fonts/kumbh-sans-v10-latin-700.svg#KumbhSans") format("svg");
-  /* Legacy iOS */
+  src: local(""), url("../fonts/kumbh-sans-v10-latin-700.woff2") format("woff2"), url("../fonts/kumbh-sans-v10-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 :focus {
-  outline: 0.2rem dashed var(--primary);
+  outline: 0.2rem dashed #5964e0;
   outline-offset: 0.5rem;
 }
 
@@ -173,8 +169,6 @@ body {
   font-family: "Kumbh Sans", sans-serif;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: var(--primary-dark);
-  background-color: var(--secondary-light);
 }
 
 h1,
@@ -202,6 +196,7 @@ h4 {
 }
 
 body {
+  color: #19202d;
   background-color: #f4f6f8;
   display: grid;
   grid-template-rows: 9.6rem repeat(2, 4rem);
@@ -267,9 +262,6 @@ body {
 .main-header .themeswitcher__toggle.dark {
   justify-content: flex-end;
 }
-.main-header .themeswitcher__toggle:hover, .main-header .themeswitcher__toggle:focus {
-  background-color: #ffffff;
-}
 .main-header .themeswitcher__circle {
   width: 1.4rem;
   height: 1.4rem;
@@ -328,6 +320,7 @@ body {
   padding-bottom: 3rem;
 }
 .searchbar__form input.full_time {
+  font-weight: 700;
   width: 2.4rem;
   height: 2.4rem;
   cursor: pointer;
@@ -342,8 +335,12 @@ body {
   appearance: auto;
   opacity: 1;
 }
+.searchbar__form .funnel_icon {
+  cursor: pointer;
+}
 .searchbar__form .full_time {
   display: none;
+  font-weight: 700;
 }
 .searchbar__form svg {
   width: 2rem;
@@ -377,6 +374,81 @@ body {
 }
 .searchbar__form button:hover, .searchbar__form button:focus {
   background-color: #939bf4;
+}
+.searchbar__form .modal {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(1.1);
+  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+}
+.searchbar__form .modal__background {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.searchbar__form .modal__box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 32.7rem;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border-radius: 0.8rem;
+  padding-bottom: 2.4rem;
+  display: grid;
+  align-items: center;
+  grid-template-rows: repeat(2, 7.2rem) min-content;
+}
+.searchbar__form .modal__box .form_line {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+}
+.searchbar__form .modal__box .form_line:first-child {
+  margin-top: 2.4rem;
+  margin-bottom: 2.4rem;
+}
+.searchbar__form .modal__box .borderbottom {
+  border-bottom: 1px solid rgba(110, 128, 152, 0.2);
+}
+.searchbar__form .modal__box .location_input {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.searchbar__form .modal__box .full_time {
+  font-weight: 700;
+}
+.searchbar__form .modal__box button {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+.searchbar__form .modal__show {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+.searchbar__form .modal__show .location_icon,
+.searchbar__form .modal__show .location_input,
+.searchbar__form .modal__show .full_time {
+  display: block;
+}
+.searchbar__form .modal__show button {
+  width: 27.9rem;
+  height: 4.8rem;
+}
+.searchbar__form .modal__show button .button_text {
+  display: inline;
 }
 
 @media screen and (min-width: 48em) {
