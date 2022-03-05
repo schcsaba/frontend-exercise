@@ -1,4 +1,26 @@
 @charset "UTF-8";
+html[color-mode=light] {
+  --body-bgcolor: #f4f6f8;
+  --form-bgcolor: #ffffff;
+  --form-color: inherit;
+  --funnel-icon-color: #6e8098;
+  --full_time-bgcolor: #19202d;
+  --modal__box-bgcolor: #ffffff;
+  --card-bgcolor: #ffffff;
+  --card__position-color: inherit;
+}
+
+html[color-mode=dark] {
+  --body-bgcolor: #121721;
+  --form-bgcolor: #19202d;
+  --form-color: #ffffff;
+  --funnel-icon-color: #ffffff;
+  --full_time-bgcolor: #ffffff;
+  --modal__box-bgcolor: #19202d;
+  --card-bgcolor: #19202d;
+  --card__position-color: #ffffff;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -197,7 +219,7 @@ h4 {
 
 body {
   color: #19202d;
-  background-color: #f4f6f8;
+  background-color: var(--body-bgcolor);
   display: grid;
   grid-template-rows: 9.6rem repeat(2, 4rem);
   grid-template-areas: "h" "hs" "s";
@@ -337,13 +359,15 @@ main button {
   height: 8rem;
   padding-right: 1.6rem;
   padding-left: 2.5rem;
-  background-color: #ffffff;
+  background-color: var(--form-bgcolor);
+  color: var(--form-color);
   border-radius: 0.6rem;
   overflow: hidden;
 }
 .searchbar__form input {
   border: none;
-  background-color: #ffffff;
+  background-color: inherit;
+  color: inherit;
 }
 .searchbar__form input.title_input {
   padding-top: 3rem;
@@ -362,9 +386,9 @@ main button {
   appearance: none;
   border-radius: 0.3rem;
   margin: 0;
-  background-color: #19202d;
+  background-color: var(--full_time-bgcolor);
   accent-color: #5964e0;
-  opacity: 0.1;
+  opacity: 0.135;
 }
 .searchbar__form input.full_time:checked {
   appearance: auto;
@@ -372,6 +396,9 @@ main button {
 }
 .searchbar__form .funnel_icon {
   cursor: pointer;
+}
+.searchbar__form .funnel_icon path {
+  fill: var(--funnel-icon-color);
 }
 .searchbar__form .full_time {
   display: none;
@@ -405,6 +432,7 @@ main button {
   display: flex;
   flex-direction: column;
   position: fixed;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
@@ -415,7 +443,7 @@ main button {
   transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 .searchbar__form .modal__background {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4965);
   position: fixed;
   left: 0;
   top: 0;
@@ -428,7 +456,7 @@ main button {
   left: 50%;
   min-width: 32.7rem;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  background-color: var(--modal__box-bgcolor);
   border-radius: 0.6rem;
   padding-bottom: 2.4rem;
   display: grid;
@@ -445,7 +473,7 @@ main button {
   margin-bottom: 2.4rem;
 }
 .searchbar__form .modal__box .borderbottom {
-  border-bottom: 1px solid rgba(110, 128, 152, 0.2);
+  border-bottom: 1px solid #6e809833;
 }
 .searchbar__form .modal__box .location_input {
   padding-top: 0;
@@ -491,11 +519,11 @@ main button {
     margin-left: 0.7rem;
   }
   .searchbar__form input.title_input {
-    border-right: 1px solid rgba(110, 128, 152, 0.2);
+    border-right: 1px solid #6e809833;
   }
   .searchbar__form input.location_input {
     display: block;
-    border-right: 1px solid rgba(110, 128, 152, 0.2);
+    border-right: 1px solid #6e809833;
   }
   .searchbar__form input.full_time {
     margin-left: 0.3rem;
@@ -533,7 +561,7 @@ main button {
   padding-right: 3.2rem;
   padding-bottom: 3.6rem;
   padding-left: 3.2rem;
-  background-color: #ffffff;
+  background-color: var(--card-bgcolor);
   border-radius: 0.6rem;
 }
 .card h4 {
@@ -570,6 +598,7 @@ main button {
 }
 .card__position {
   margin-bottom: 2rem;
+  color: var(--card__position-color);
 }
 .card__company {
   margin-bottom: 4.6rem;

@@ -10,4 +10,26 @@ $secondary-darker: #6e8098;
 $tablet: 48em;
 $desktop: 90em;
 
-$form-border: 1px solid rgba(110, 128, 152, 0.2);
+$form-border: 1px solid #6e809833;
+
+html[color-mode='light'] {
+    --body-bgcolor: #{$secondary-light};
+    --form-bgcolor: #{$secondary};
+    --form-color: inherit;
+    --funnel-icon-color: #{$secondary-darker};
+    --full_time-bgcolor: #{$primary-dark};
+    --modal__box-bgcolor: #{$secondary};
+    --card-bgcolor: #{$secondary};
+    --card__position-color: inherit;
+}
+
+html[color-mode='dark'] {
+    --body-bgcolor: #{$primary-midnight};
+    --form-bgcolor: #{$primary-dark};
+    --form-color: #{$secondary};
+    --funnel-icon-color: #{$secondary};
+    --full_time-bgcolor: #{$secondary};
+    --modal__box-bgcolor: #{$primary-dark};
+    --card-bgcolor: #{$primary-dark};
+    --card__position-color: #{$secondary};
+}

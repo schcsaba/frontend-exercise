@@ -9,15 +9,28 @@ const modalBackground = document.querySelector(".modal__background");
 const searchbarForm = document.querySelector(".searchbar__form");
 const desktopMediaQuery = window.matchMedia("(min-width: 90em)");
 const noDesktopMediaQuery = window.matchMedia("(max-width: 89em)");
+const darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
-let lightTheme = true;
 themeswitcherToggle.addEventListener("click", () => {
-    if (lightTheme === true) {
+    const theme = document.documentElement.getAttribute("color-mode");
+    if (theme === "light") {
+        document.documentElement.setAttribute("color-mode", "dark");
+        localStorage.setItem("color-mode", "dark");
         themeswitcherToggle.classList.add("dark");
-        lightTheme = false;
     } else {
+        document.documentElement.setAttribute("color-mode", "light");
+        localStorage.setItem("color-mode", "light");
         themeswitcherToggle.classList.remove("dark");
-        lightTheme = true;
+    }
+});
+
+darkThemeMediaQuery.addEventListener("change", ev => {
+    if (ev.matches) {
+        document.documentElement.setAttribute("color-mode", "dark");
+        themeswitcherToggle.classList.add("dark");
+    } else {
+        document.documentElement.setAttribute("color-mode", "light");
+        themeswitcherToggle.classList.remove("dark");
     }
 });
 
@@ -42,14 +55,18 @@ if (desktopMediaQuery.matches) {
     labelFullTime.textContent = "Full Time Only";
 }
 
-desktopMediaQuery.addEventListener("change", () => {
-    titleInput.placeholder = "Filter by title, companies, expertise...";
-    labelFullTime.textContent = "Full Time Only";
+desktopMediaQuery.addEventListener("change", ev => {
+    if (ev.matches) {
+        titleInput.placeholder = "Filter by title, companies, expertise...";
+        labelFullTime.textContent = "Full Time Only";
+    }
 });
 
-noDesktopMediaQuery.addEventListener("change", () => {
-    titleInput.placeholder = "Filter by title...";
-    labelFullTime.textContent = "Full Time";
+noDesktopMediaQuery.addEventListener("change", ev => {
+    if (ev.matches) {
+        titleInput.placeholder = "Filter by title...";
+        labelFullTime.textContent = "Full Time";
+    }
 });
 
 funnelIcon.addEventListener("click", () => {

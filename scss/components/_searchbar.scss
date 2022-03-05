@@ -12,13 +12,15 @@
         height: 8rem;
         padding-right: 1.6rem;
         padding-left: 2.5rem;
-        background-color: $secondary;
+        background-color: var(--form-bgcolor);
+        color: var(--form-color);
         border-radius: .6rem;
         overflow: hidden;
 
         input {
             border: none;
-            background-color: $secondary;
+            background-color: inherit;
+            color: inherit;
 
             &.title_input {
                 padding-top: 3rem;
@@ -39,9 +41,9 @@
                 appearance: none;
                 border-radius: 0.3rem;
                 margin: 0;
-                background-color: $primary-dark;
+                background-color: var(--full_time-bgcolor);
                 accent-color: $primary;
-                opacity: 0.1;
+                opacity: 0.135;
             }
 
             &.full_time:checked {
@@ -52,6 +54,10 @@
 
         .funnel_icon {
             cursor: pointer;
+
+            path {
+                fill: var(--funnel-icon-color);
+            }
         }
 
         .full_time {
@@ -93,6 +99,7 @@
             display: flex;
             flex-direction: column;
             position: fixed;
+            z-index: 10;
             left: 0;
             top: 0;
             width: 100%;
@@ -103,7 +110,7 @@
             transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 
             &__background {
-                background-color: rgba(0, 0, 0, 0.5);
+                background-color: rgba(0, 0, 0, 0.4965);
                 position: fixed;
                 left: 0;
                 top: 0;
@@ -117,7 +124,7 @@
                 left: 50%;
                 min-width: 32.7rem;
                 transform: translate(-50%, -50%);
-                background-color: $secondary;
+                background-color: var(--modal__box-bgcolor);
                 border-radius: .6rem;
                 padding-bottom: 2.4rem;
                 display: grid;
