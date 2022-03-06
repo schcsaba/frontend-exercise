@@ -7,7 +7,11 @@ html[color-mode=light] {
   --full_time-bgcolor: #19202d;
   --modal__box-bgcolor: #ffffff;
   --card-bgcolor: #ffffff;
-  --card__position-color: inherit;
+  --card-title-color: inherit;
+  --company-link-bgcolor: rgba(89, 100, 224, 0.1);
+  --company-link-bgcolor-hover: rgba(89, 100, 224, 0.3512);
+  --company-link-color: #5964e0;
+  --apply_zone-bgcolor: #ffffff;
 }
 
 html[color-mode=dark] {
@@ -18,7 +22,11 @@ html[color-mode=dark] {
   --full_time-bgcolor: #ffffff;
   --modal__box-bgcolor: #19202d;
   --card-bgcolor: #19202d;
-  --card__position-color: #ffffff;
+  --card-title-color: #ffffff;
+  --company-link-bgcolor: rgba(255, 255, 255, 0.1);
+  --company-link-bgcolor-hover: rgba(255, 255, 255, 0.25);
+  --company-link-color: #ffffff;
+  --apply_zone-bgcolor: #19202d;
 }
 
 /* Box sizing rules */
@@ -198,7 +206,7 @@ h2,
 h3,
 h4 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.24;
 }
 
 h1 {
@@ -579,7 +587,7 @@ main button {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: -0.1rem;
   transform: translateY(-50%);
 }
 .card__oval {
@@ -594,14 +602,14 @@ main button {
   flex-wrap: wrap;
   gap: 1.4rem;
   align-items: center;
-  margin-bottom: 2.2rem;
+  margin-bottom: 1.6rem;
 }
-.card__position {
-  margin-bottom: 2rem;
-  color: var(--card__position-color);
+.card__title {
+  margin-bottom: 1.7rem;
+  color: var(--card-title-color);
 }
 .card__company {
-  margin-bottom: 4.6rem;
+  margin-bottom: 4.4rem;
 }
 .card__posted-at, .card__contract, .card__company {
   color: #6e8098;
@@ -621,6 +629,140 @@ button .button_text {
 }
 button:hover, button:focus {
   background-color: #939bf4;
+}
+
+.details {
+  max-width: 73rem;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.details__header {
+  transform: translateY(-1.5rem);
+}
+.details__header .card {
+  padding-bottom: 3.2rem;
+}
+.details__header .card__logo {
+  margin-right: auto;
+  margin-left: auto;
+}
+.details__header .card__title, .details__header .card__company {
+  text-align: center;
+}
+.details__header .card__title {
+  margin-bottom: 1.3rem;
+}
+.details__header .card__company {
+  margin-bottom: 2.7rem;
+}
+.details__header .card__link {
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 14.7rem;
+  height: 4.8rem;
+  border-radius: 0.5rem;
+  background-color: var(--company-link-bgcolor);
+  color: #5964e0;
+  font-weight: 700;
+  transition: 0.3s;
+}
+.details__header .card__link:hover, .details__header .card__link:focus {
+  background-color: var(--company-link-bgcolor-hover);
+}
+
+.apply_zone {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 9.6rem;
+  background-color: var(--apply_zone-bgcolor);
+  border-radius: 0.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.apply_zone .container {
+  max-width: 73rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.apply_zone__position_company {
+  display: none;
+}
+.apply_zone__position {
+  color: var(--card-title-color);
+}
+.apply_zone__company {
+  color: #6e8098;
+  line-height: 1;
+}
+.apply_zone button {
+  width: 100%;
+}
+
+@media screen and (min-width: 48em) {
+  .details__header {
+    transform: translateY(-4rem);
+  }
+  .details__header .card {
+    display: flex;
+    padding-right: 0rem;
+    padding-left: 0;
+    padding-bottom: 0;
+  }
+  .details__header .card__logo {
+    transform: translateY(0);
+    margin-right: 0;
+    margin-left: 0;
+    border-radius: 0;
+    border-bottom-left-radius: 0.6rem;
+    width: 14rem;
+    height: 14rem;
+  }
+  .details__header .card__logo img {
+    transform: scale(2);
+  }
+  .details__header .card__content {
+    flex-grow: 1;
+    padding-right: 4rem;
+    padding-left: 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .details__header .card__title, .details__header .card__company {
+    text-align: left;
+  }
+  .details__header .card__title {
+    margin-bottom: 0;
+  }
+  .details__header .card__company {
+    margin-bottom: 0;
+  }
+  .details__header .card__link {
+    margin-right: 0;
+    margin-left: 0;
+    color: var(--company-link-color);
+  }
+
+  .apply_zone .container {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  .apply_zone__position_company {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .apply_zone button {
+    width: 14.1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

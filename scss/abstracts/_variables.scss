@@ -20,7 +20,11 @@ html[color-mode='light'] {
     --full_time-bgcolor: #{$primary-dark};
     --modal__box-bgcolor: #{$secondary};
     --card-bgcolor: #{$secondary};
-    --card__position-color: inherit;
+    --card-title-color: inherit;
+    --company-link-bgcolor: rgba(89, 100, 224, 0.1);
+    --company-link-bgcolor-hover: rgba(89, 100, 224, 0.3512);
+    --company-link-color: #{$primary};
+    --apply_zone-bgcolor: #{$secondary};
 }
 
 html[color-mode='dark'] {
@@ -31,5 +35,9 @@ html[color-mode='dark'] {
     --full_time-bgcolor: #{$secondary};
     --modal__box-bgcolor: #{$primary-dark};
     --card-bgcolor: #{$primary-dark};
-    --card__position-color: #{$secondary};
+    --card-title-color: #{$secondary};
+    --company-link-bgcolor: rgba(255, 255, 255, 0.1);
+    --company-link-bgcolor-hover: rgba(255, 255, 255, 0.25);
+    --company-link-color: #{$secondary};
+    --apply_zone-bgcolor: #{$primary-dark};
 }

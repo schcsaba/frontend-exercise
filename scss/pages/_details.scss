@@ -1,0 +1,163 @@
+.details {
+    max-width: 73rem;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+
+    &__header {
+        transform: translateY(-1.5rem);
+
+        .card {
+            padding-bottom: 3.2rem;
+
+            &__logo {
+                margin-right: auto;
+                margin-left: auto;
+            }
+    
+            &__title,
+            &__company {
+                text-align: center;
+            }
+    
+            &__title {
+                margin-bottom: 1.3rem;
+            }
+    
+            &__company {
+                margin-bottom: 2.7rem;
+            }
+    
+            &__link {
+                margin-right: auto;
+                margin-left: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 14.7rem;
+                height: 4.8rem;
+                border-radius: 0.5rem;
+                background-color: var(--company-link-bgcolor);
+                color: $primary;
+                font-weight: 700;
+                transition: 0.3s;
+            }
+
+            &__link:hover,
+            &__link:focus {
+                background-color: var(--company-link-bgcolor-hover);
+            }
+        }
+    }
+}
+
+.apply_zone {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 9.6rem;
+    background-color: var(--apply_zone-bgcolor);
+    border-radius: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container {
+        max-width: 73rem;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__position_company {
+        display: none;
+    }
+
+    &__position {
+        color: var(--card-title-color);
+    }
+
+    &__company {
+        color: $secondary-darker;
+        line-height: 1;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: $tablet) {
+    .details {
+        &__header {
+            transform: translateY(-4rem);
+
+            .card {
+                display: flex;
+                padding-right: 0rem;
+                padding-left: 0;
+                padding-bottom: 0;
+
+                &__logo {
+                    transform: translateY(0);
+                    margin-right: 0;
+                    margin-left: 0;
+                    border-radius: 0;
+                    border-bottom-left-radius: 0.6rem;
+                    width: 14rem;
+                    height: 14rem;
+
+                    img {
+                        transform: scale(2);
+                    }
+                }
+
+                &__content {
+                    flex-grow: 1;
+                    padding-right: 4rem;
+                    padding-left: 4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                &__title,
+                &__company {
+                    text-align: left;
+                }
+
+                &__title {
+                    margin-bottom: 0;
+                }
+
+                &__company {
+                    margin-bottom: 0;
+                }
+
+                &__link {
+                    margin-right: 0;
+                    margin-left: 0;
+                    color: var(--company-link-color);
+                }
+            }
+        }
+    }
+
+    .apply_zone {
+        .container {
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        &__position_company {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        button {
+            width: 14.1rem;
+        }
+    }
+}
