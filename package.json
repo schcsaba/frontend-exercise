@@ -2,13 +2,22 @@
   "name": "ecf-frontend",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "src/index.html",
+  "browserslist": "cover 99.5%",
   "scripts": {
-    "sass": "sass scss:css --watch --style=expanded"
+    "sass": "sass scss:css --watch --style=expanded",
+    "start": "parcel",
+    "build": "parcel build"
   },
   "author": "Csaba Schnitchen",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/packager-raw-url": "^2.3.2",
+    "@parcel/transformer-sass": "^2.3.2",
+    "@parcel/transformer-webmanifest": "^2.3.2",
+    "autoprefixer": "^10.4.2",
+    "parcel": "^2.3.2",
+    "postcss": "^8.4.8",
     "sass": "^1.49.7"
   }
 }
