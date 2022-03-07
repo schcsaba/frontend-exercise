@@ -1,3 +1,23 @@
+body.details-page {
+    grid-template-rows: 9.6rem;
+}
+
+.main-content.details-page {
+    padding-bottom: 6.4rem;
+}
+
+@media screen and (min-width: $tablet) {
+    .main-content.details-page {
+        padding-bottom: 5.3rem;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    .main-content.details-page {
+        padding-bottom: 8rem;
+    }
+}
+
 .details {
     max-width: 73rem;
     width: 100%;
@@ -49,12 +69,98 @@
             }
         }
     }
+
+    &__content {
+        .card {
+            padding-top: 4rem;
+            padding-right: 2.4rem;
+            padding-bottom: 4rem;
+            padding-left: 2.4rem;
+
+            &__header {
+                display: grid;
+                margin-bottom: 3.2rem;
+            }
+
+            &__when_what {
+                margin-bottom: 0.8rem;
+            }
+
+            &__title {
+                margin-bottom: 1.2rem;
+            }
+
+            &__location {
+                margin-bottom: 5.4rem;
+            }
+
+            button {
+                width: 100%;
+            }
+
+            &__description,
+            ul,
+            ol {
+                color: var(--description-color);
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 0;
+                margin-top: 3.2rem;
+                margin-bottom: 4rem;
+
+                li {
+                    display: grid;
+                    grid-template-columns: min-content 1fr;
+                    column-gap: 3.2rem;
+
+                    &::before {
+                        content: '\200B';
+                        display: inline-block;
+                        width: 0.4rem;
+                        height: 0.4rem;
+                        background-color: $primary;
+                        border-radius: 50%;
+                        transform: translateY(1.1rem);
+                    }
+                }
+            }
+
+            ol {
+                list-style: none;
+                counter-reset: taskscounter;
+                padding-left: 0;
+                margin-top: 3.2rem;
+                margin-bottom: 0;
+
+                li {
+                    counter-increment: taskscounter;
+                    display: grid;
+                    grid-template-columns: min-content 1fr;
+                    column-gap: 3.2rem;
+
+                    &::before {
+                        content: counter(taskscounter);
+                        color: $primary;
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .requirements_title {
+                margin-top: 6.6rem;
+                margin-bottom: 2.8rem;
+            }
+
+            .what_you_will_do_title {
+                margin-bottom: 2.3rem;
+            }
+        }
+    }
 }
 
 .apply_zone {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     height: 9.6rem;
     background-color: var(--apply_zone-bgcolor);
     border-radius: 0.6rem;
@@ -139,6 +245,114 @@
                     margin-right: 0;
                     margin-left: 0;
                     color: var(--company-link-color);
+                }
+            }
+        }
+
+        &__content {
+            .card {
+                padding-top: 4.8rem;
+                padding-right: 4.8rem;
+                padding-bottom: 4.8rem;
+                padding-left: 4.8rem;
+    
+                &__header {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: repeat(3, 1fr);
+                    margin-bottom: 4rem;
+                }
+    
+                &__when_what {
+                    margin-bottom: 0.8rem;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 1;
+                    grid-row-end: 2;
+                }
+    
+                &__title {
+                    margin-bottom: 1.2rem;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 2;
+                    grid-row-end: 3;
+                }
+    
+                &__location {
+                    margin-bottom: 0;
+                    grid-column-start: 1;
+                    grid-column-end: 2;
+                    grid-row-start: 3;
+                    grid-row-end: 4;
+                }
+    
+                button {
+                    width: 14.1rem;
+                    grid-column-start: 2;
+                    grid-column-end: 3;
+                    grid-row-start: 1;
+                    grid-row-end: 4;
+                    justify-self: end;
+                }
+    
+                &__description,
+                ul,
+                ol {
+                    color: var(--description-color);
+                }
+    
+                ul {
+                    list-style: none;
+                    padding-left: 0;
+                    margin-top: 2.4rem;
+                    margin-bottom: 4rem;
+    
+                    li {
+                        display: grid;
+                        grid-template-columns: min-content 1fr;
+                        column-gap: 3.2rem;
+    
+                        &::before {
+                            content: '\200B';
+                            display: inline-block;
+                            width: 0.4rem;
+                            height: 0.4rem;
+                            background-color: $primary;
+                            border-radius: 50%;
+                            transform: translateY(1.1rem);
+                        }
+                    }
+                }
+    
+                ol {
+                    list-style: none;
+                    counter-reset: taskscounter;
+                    padding-left: 0;
+                    margin-top: 2.4rem;
+                    margin-bottom: 0;
+    
+                    li {
+                        counter-increment: taskscounter;
+                        display: grid;
+                        grid-template-columns: min-content 1fr;
+                        column-gap: 3.2rem;
+    
+                        &::before {
+                            content: counter(taskscounter);
+                            color: $primary;
+                            font-weight: 700;
+                        }
+                    }
+                }
+    
+                .requirements_title {
+                    margin-top: 4rem;
+                    margin-bottom: 2.8rem;
+                }
+    
+                .what_you_will_do_title {
+                    margin-bottom: 2.3rem;
                 }
             }
         }

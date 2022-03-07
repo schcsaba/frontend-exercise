@@ -24,6 +24,7 @@ html[color-mode='light'] {
     --company-link-bgcolor: rgba(89, 100, 224, 0.1);
     --company-link-bgcolor-hover: rgba(89, 100, 224, 0.3512);
     --company-link-color: #{$primary};
+    --description-color: #{$secondary-darker};
     --apply_zone-bgcolor: #{$secondary};
 }
 
@@ -39,5 +40,6 @@ html[color-mode='dark'] {
     --company-link-bgcolor: rgba(255, 255, 255, 0.1);
     --company-link-bgcolor-hover: rgba(255, 255, 255, 0.25);
     --company-link-color: #{$secondary};
+    --description-color: #{$secondary-dark};
     --apply_zone-bgcolor: #{$primary-dark};
 }
