@@ -12,13 +12,13 @@ const noDesktopMediaQuery = window.matchMedia("(max-width: 89em)");
 const darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
 themeswitcherToggle.addEventListener("click", () => {
-    const theme = document.documentElement.getAttribute("color-mode");
+    const theme = document.documentElement.getAttribute("data-color-mode");
     if (theme === "light") {
-        document.documentElement.setAttribute("color-mode", "dark");
+        document.documentElement.setAttribute("data-color-mode", "dark");
         localStorage.setItem("color-mode", "dark");
         themeswitcherToggle.classList.add("dark");
     } else {
-        document.documentElement.setAttribute("color-mode", "light");
+        document.documentElement.setAttribute("data-color-mode", "light");
         localStorage.setItem("color-mode", "light");
         themeswitcherToggle.classList.remove("dark");
     }
@@ -26,10 +26,10 @@ themeswitcherToggle.addEventListener("click", () => {
 
 darkThemeMediaQuery.addEventListener("change", ev => {
     if (ev.matches) {
-        document.documentElement.setAttribute("color-mode", "dark");
+        document.documentElement.setAttribute("data-color-mode", "dark");
         themeswitcherToggle.classList.add("dark");
     } else {
-        document.documentElement.setAttribute("color-mode", "light");
+        document.documentElement.setAttribute("data-color-mode", "light");
         themeswitcherToggle.classList.remove("dark");
     }
 });

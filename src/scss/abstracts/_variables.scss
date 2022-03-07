@@ -12,7 +12,7 @@ $desktop: 90em;
 
 $form-border: 1px solid #6e809833;
 
-html[color-mode='light'] {
+html[data-color-mode='light'] {
     --body-bgcolor: #{$secondary-light};
     --form-bgcolor: #{$secondary};
     --form-color: inherit;
@@ -28,7 +28,7 @@ html[color-mode='light'] {
     --apply_zone-bgcolor: #{$secondary};
 }
 
-html[color-mode='dark'] {
+html[data-color-mode='dark'] {
     --body-bgcolor: #{$primary-midnight};
     --form-bgcolor: #{$primary-dark};
     --form-color: #{$secondary};
