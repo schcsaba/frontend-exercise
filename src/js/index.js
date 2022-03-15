@@ -1,6 +1,6 @@
 apiGetJobs(
     response => {
-        response.jobs.sort((a, b) => b - a).forEach(job => addJob(job));
+        response.jobs.sort((a, b) => b.postedAt - a.postedAt).forEach(job => addJob(job));
         if (response.total <= document.querySelectorAll("article").length) {
             loadMoreButton.remove();
             const noMoreJobsElement = document.createElement("p");
