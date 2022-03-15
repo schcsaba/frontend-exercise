@@ -11,6 +11,8 @@ const desktopMediaQuery = window.matchMedia("(min-width: 90em)");
 const noDesktopMediaQuery = window.matchMedia("(max-width: 89em)");
 const darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const cardList = document.querySelector(".card_list");
+const loadMoreButton = document.querySelector('.load-more button');
+const loadMore = document.querySelector('.load-more');
 
 moment.updateLocale('en', {
     relativeTime : {
@@ -70,6 +72,21 @@ themeswitcherToggle.addEventListener("focus", () => {
 
 themeswitcherToggle.addEventListener("blur", () => {
     themeswitcherCircle.style.backgroundColor = "#5964e0";
+});
+
+loadMoreButton.addEventListener("click", (ev) => {
+    apiGetJobs(
+        response => {
+            response.jobs.sort((a, b) => b - a).forEach(job => addJob(job));
+            if (response.total <= document.querySelectorAll("article").length) {
+                loadMoreButton.remove();
+                const noMoreJobsElement = document.createElement("p");
+                noMoreJobsElement.textContent = "There are no more job offers.";
+                loadMore.appendChild(noMoreJobsElement);
+            }
+        },
+        document.querySelectorAll("article").length
+    );
 });
 
 const addJob = data => {
