@@ -24,6 +24,10 @@
         align-items: center;
         margin-bottom: -0.1rem;
         transform: translateY(-50%);
+
+        img {
+            transform: scale(0.8);
+        }
     }
 
     &__oval {

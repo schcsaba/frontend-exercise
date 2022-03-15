@@ -12,6 +12,27 @@ const noDesktopMediaQuery = window.matchMedia("(max-width: 89em)");
 const darkThemeMediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 const cardList = document.querySelector(".card_list");
 
+moment.updateLocale('en', {
+    relativeTime : {
+        future: "in %s",
+        past:   "%s ago",
+        s  : 'a few seconds',
+        ss : '%ds',
+        m:  "a minute",
+        mm: "%dm",
+        h:  "an hour",
+        hh: "%dh",
+        d:  "a day",
+        dd: "%dd",
+        w:  "a week",
+        ww: "%dw",
+        M:  "a month",
+        MM: "%dmo",
+        y:  "a year",
+        yy: "%dy"
+    }
+});
+
 themeswitcherToggle.addEventListener("click", () => {
     const theme = document.documentElement.getAttribute("data-color-mode");
     if (theme === "light") {
@@ -83,12 +104,12 @@ const addJob = data => {
 
     // When what frame: frame for posted at and type of contract
     const jobWhenWhat = document.createElement("div");
-    jobWhenWhat.className = "card__whewn_what";
+    jobWhenWhat.className = "card__when_what";
 
     // Posted at
     const jobPostedAt = document.createElement("div");
     jobPostedAt.className = "card__posted-at";
-    jobPostedAt.textContent = postedAt;
+    jobPostedAt.textContent = moment(postedAt).fromNow();
 
     // Dot
     const jobOval = document.createElement("div");
