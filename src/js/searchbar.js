@@ -1,4 +1,11 @@
-
+const titleInput = document.querySelector(".title_input");
+const labelFullTime = document.querySelector("label.full_time");
+const funnelIcon = document.querySelector(".funnel_icon");
+const modal = document.querySelector(".modal");
+const modalBackground = document.querySelector(".modal__background");
+const searchbarForm = document.querySelector(".searchbar__form");
+const desktopMediaQuery = window.matchMedia("(min-width: 90em)");
+const noDesktopMediaQuery = window.matchMedia("(max-width: 89em)");
 
 if (desktopMediaQuery.matches) {
     titleInput.placeholder = "Filter by title, companies, expertise...";

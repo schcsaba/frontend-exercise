@@ -6,9 +6,9 @@
   "browserslist": "cover 99.5%",
   "scripts": {
     "sass": "sass scss:css --watch --style=expanded",
-    "start": "parcel",
+    "start": "parcel src/index.html src/details.html",
     "prebuild": "rimraf dist",
-    "build": "parcel build"
+    "build": "parcel build src/index.html src/details.html"
   },
   "author": "Csaba Schnitchen",
   "license": "ISC",

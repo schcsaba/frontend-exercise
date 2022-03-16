@@ -1,4 +1,5 @@
-button {
+button,
+.apply_button {
     width: 14.1rem;
     height: 4.8rem;
     background-color: $primary;
@@ -15,4 +16,11 @@ button {
     &:focus {
         background-color: $primary-light;
     }
+}
+
+.apply_button {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

@@ -94,7 +94,7 @@ body.details-page {
                 margin-bottom: 5.4rem;
             }
 
-            button {
+            .apply_button {
                 width: 100%;
             }
 
@@ -153,7 +153,7 @@ body.details-page {
                 margin-bottom: 2.8rem;
             }
 
-            .what_you_will_do_title {
+            .role_title {
                 margin-bottom: 2.3rem;
             }
         }
@@ -189,7 +189,7 @@ body.details-page {
         line-height: 1;
     }
 
-    button {
+    .apply_button {
         width: 100%;
     }
 }
@@ -213,10 +213,6 @@ body.details-page {
                     border-bottom-left-radius: 0.6rem;
                     width: 14rem;
                     height: 14rem;
-
-                    img {
-                        transform: scale(2);
-                    }
                 }
 
                 &__content {
@@ -287,7 +283,7 @@ body.details-page {
                     grid-row-end: 4;
                 }
     
-                button {
+                .apply_button {
                     width: 14.1rem;
                     grid-column-start: 2;
                     grid-column-end: 3;
@@ -370,7 +366,7 @@ body.details-page {
             gap: 1.2rem;
         }
 
-        button {
+        .apply_button {
             width: 14.1rem;
         }
     }

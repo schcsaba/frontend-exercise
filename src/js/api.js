@@ -32,4 +32,20 @@ const apiGetJobs = (onSuccess, offset = 0, limit = 12) => {
         }
     });
     request.send();
-}
+};
+
+const apiGetJobDetails = (id, onSuccess) => {
+    const request = new XMLHttpRequest();
+    request.open("GET", `${API_URL}/api/job/${encodeURIComponent(id)}`, true);
+    request.addEventListener("readystatechange", function() {
+        if (request.readyState === XMLHttpRequest.DONE) {
+            if (request.status === 200) {
+                const response = JSON.parse(request.responseText);
+                onSuccess(response);
+            } else {
+                alert("Erreur : TODO, gérer les erreurs...");
+            }
+        }
+    });
+    request.send();
+};
