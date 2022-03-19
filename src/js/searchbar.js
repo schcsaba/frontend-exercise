@@ -28,7 +28,6 @@ noDesktopMediaQuery.addEventListener("change", ev => {
 
 funnelIcon.addEventListener("click", () => {
     modal.classList.add("modal__show");
-    /* Déclenche la prise de focus sur le premier lien du menu après la fin de la transition */
     modal.addEventListener('transitionend', ev => {
         if (ev.target != modal) return;
         modal.querySelector('input').focus();
@@ -47,9 +46,10 @@ document.addEventListener("keydown", ev => {
     }
 });
 
-searchbarForm.addEventListener("submit", (ev) => {
+searchbarForm.addEventListener("submit", ev => {
     ev.preventDefault();
-    if (modal.classList.contains("modal__show")) {
-        modal.classList.remove("modal__show");
-    }
+    document.querySelectorAll("article").forEach(article => article.remove());
+    loadMoreButton.style.display = "inline-block";
+    noMoreJobsElement.style.display = "none";
+    getJobs();
 });

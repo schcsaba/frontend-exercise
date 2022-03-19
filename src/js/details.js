@@ -1,5 +1,5 @@
-const idInUrl = new URLSearchParams(window.location.search);
-const id = idInUrl.get("id");
+const urlParams = new URLSearchParams(window.location.search);
+const id = urlParams.get("id");
 apiGetJobDetails(
     id,
     response => {

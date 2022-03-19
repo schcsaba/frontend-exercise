@@ -2,13 +2,13 @@
   "name": "ecf-frontend",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
+  "source": ["src/index.html", "src/details.html"],
   "browserslist": "cover 99.5%",
   "scripts": {
     "sass": "sass scss:css --watch --style=expanded",
-    "start": "parcel src/index.html src/details.html",
+    "start": "parcel",
     "prebuild": "rimraf dist",
-    "build": "parcel build src/index.html src/details.html"
+    "build": "parcel build"
   },
   "author": "Csaba Schnitchen",
   "license": "ISC",

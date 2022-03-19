@@ -1,21 +1,38 @@
 const cardList = document.querySelector(".card_list");
-const loadMoreButton = document.querySelector('.load-more button');
-const loadMore = document.querySelector('.load-more');
+const loadMoreButton = document.querySelector(".load-more button");
+const loadMore = document.querySelector(".load-more");
+const noMoreJobsElement = document.querySelector(".load-more p");
 
-loadMoreButton.addEventListener("click", (ev) => {
+noMoreJobsElement.style.display = "none";
+
+const getJobs = () => {
+    const text = document.querySelector("#title_input").value;
+    let location;
+    let fulltime;
+    if (modal.classList.contains("modal__show")) {
+        location = document.querySelector("#modal_location_input").value;
+        fulltime = document.querySelector("#modal_full_time").checked ? 1 : 0;
+        modal.classList.remove("modal__show");
+    } else {
+        location = document.querySelector("#location_input").value;
+        fulltime = document.querySelector("#full_time").checked ? 1 : 0;
+    }
     apiGetJobs(
         response => {
             response.jobs.sort((a, b) => b.postedAt - a.postedAt).forEach(job => addJob(job));
             if (response.total <= document.querySelectorAll("article").length) {
-                loadMoreButton.remove();
-                const noMoreJobsElement = document.createElement("p");
-                noMoreJobsElement.textContent = "There are no more job offers.";
-                loadMore.appendChild(noMoreJobsElement);
+                loadMoreButton.style.display = "none";
+                noMoreJobsElement.style.display = "block";
             }
         },
-        document.querySelectorAll("article").length
+        document.querySelectorAll("article").length,
+        text,
+        location,
+        fulltime
     );
-});
+};
+
+loadMoreButton.addEventListener("click", getJobs);
 
 const addJob = data => {
     const {company, contract, id, location, logo, logoBackground, position, postedAt} = data;
