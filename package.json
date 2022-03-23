@@ -12,7 +12,7 @@
   "scripts": {
     "sass": "sass scss:css --watch --style=expanded",
     "start": "parcel",
-    "prebuild": "rimraf dist",
+    "prebuild": "rimraf dist-build",
     "build": "parcel build"
   },
   "author": "Csaba Schnitchen",
