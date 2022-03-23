@@ -4,5 +4,8 @@ apiGetJobDetails(
     id,
     response => {
         displayJobDetails(response);
+    },
+    errorMessage => {
+        alert(errorMessage);
     }
 );

@@ -1,6 +1,6 @@
 const API_URL = "https://ecf-dwwm.cefim-formation.org";
 
-const apiGetJobs = (onSuccess, offset = 0, text = '', location = '', fulltime = 2, limit = 12) => {
+const apiGetJobs = (onSuccess, onError, offset = 0, text = '', location = '', fulltime = 2, limit = 12) => {
     let url;
     const request = new XMLHttpRequest();
     if (text || location || (fulltime === 1 || fulltime === 0)) {
@@ -24,21 +24,27 @@ const apiGetJobs = (onSuccess, offset = 0, text = '', location = '', fulltime = 
                         if (request2.status === 200) {
                             const response2 = JSON.parse(request2.responseText);
                             onSuccess(response2);
+                        } else if (request2.status === 400) {
+                            const response2 = JSON.parse(request2.responseText);
+                            onError(response2.error);
                         } else {
-                            alert("Erreur : TODO, gérer les erreurs...");
+                            onError("An unknown error has occurred!");
                         }
                     }
                 });
                 request2.send();
+            } else if (request.status === 400) {
+                const response = JSON.parse(request.responseText);
+                onError(response.error);
             } else {
-                alert("Erreur : TODO, gérer les erreurs...");
+                onError("An unknown error has occurred!");
             }
         }
     });
     request.send();
 };
 
-const apiGetJobDetails = (id, onSuccess) => {
+const apiGetJobDetails = (id, onSuccess, onError) => {
     const request = new XMLHttpRequest();
     request.open("GET", `${API_URL}/api/job/${encodeURIComponent(id)}`, true);
     request.addEventListener("readystatechange", function() {
@@ -46,8 +52,11 @@ const apiGetJobDetails = (id, onSuccess) => {
             if (request.status === 200) {
                 const response = JSON.parse(request.responseText);
                 onSuccess(response);
+            } else if (request.status === 404) {
+                const response = JSON.parse(request.responseText);
+                onError(response.error);
             } else {
-                alert("Erreur : TODO, gérer les erreurs...");
+                onError("An unknown error has occurred!");
             }
         }
     });

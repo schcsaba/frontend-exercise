@@ -17,13 +17,20 @@ const getJobs = () => {
         location = document.querySelector("#location_input").value;
         fulltime = document.querySelector("#full_time").checked ? 1 : 0;
     }
+    const searchbarFormFields = searchbarForm.querySelectorAll("input, button");
+    searchbarFormFields.forEach(field => field.disabled = true);
     apiGetJobs(
         response => {
             response.jobs.sort((a, b) => b.postedAt - a.postedAt).forEach(job => addJob(job));
+            searchbarFormFields.forEach(field => field.disabled = false);
             if (response.total <= document.querySelectorAll("article").length) {
                 loadMoreButton.style.display = "none";
                 noMoreJobsElement.style.display = "block";
             }
+        },
+        errorMessage => {
+            alert(errorMessage);
+            searchbarFormFields.forEach(field => field.disabled = false);
         },
         document.querySelectorAll("article").length,
         text,
