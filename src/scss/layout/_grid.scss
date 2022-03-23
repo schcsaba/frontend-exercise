@@ -3,9 +3,6 @@ body {
     background-color: var(--body-bgcolor);
     display: grid;
     grid-template-rows: 9.6rem repeat(2, 4rem);
-    grid-template-areas:    "h"
-                            "hs"
-                            "s";
 }
 
 @media screen and (min-width: $tablet) {

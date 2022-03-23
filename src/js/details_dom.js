@@ -1,6 +1,11 @@
 const displayJobDetails = data => {
     const {apply, company, contract, description, location, logo, logoBackground, position, postedAt, requirements, role, website} = data;
 
+    document.querySelector(".details__header").style.display = "block";
+    document.querySelector(".details__content").style.display = "block";
+    document.querySelector(".apply_zone").style.display = "flex";
+    document.querySelector("#loading-details").style.display = "none";
+
     document.querySelector(".card__logo").style.backgroundColor = logoBackground;
     document.querySelector(".card__logo img").src = `${API_URL}/${logo}`;
     document.querySelector(".card__logo img").alt = `${company} logo`;

@@ -3,8 +3,6 @@ const loadMoreButton = document.querySelector(".load-more button");
 const loadMore = document.querySelector(".load-more");
 const noMoreJobsElement = document.querySelector(".load-more p");
 
-noMoreJobsElement.style.display = "none";
-
 const getJobs = () => {
     const text = document.querySelector("#title_input").value;
     let location;
@@ -17,12 +15,14 @@ const getJobs = () => {
         location = document.querySelector("#location_input").value;
         fulltime = document.querySelector("#full_time").checked ? 1 : 0;
     }
+    document.querySelector("#loading-list").style.display = "block";
     const searchbarFormFields = searchbarForm.querySelectorAll("input, button");
     searchbarFormFields.forEach(field => field.disabled = true);
     apiGetJobs(
         response => {
             response.jobs.sort((a, b) => b.postedAt - a.postedAt).forEach(job => addJob(job));
             searchbarFormFields.forEach(field => field.disabled = false);
+            document.querySelector("#loading-list").style.display = "none";
             if (response.total <= document.querySelectorAll("article").length) {
                 loadMoreButton.style.display = "none";
                 noMoreJobsElement.style.display = "block";

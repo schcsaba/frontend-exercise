@@ -1,5 +1,5 @@
 body.details-page {
-    grid-template-rows: 9.6rem;
+    grid-template-rows: 9.6rem 4rem;
 }
 
 .main-content.details-page {
@@ -25,6 +25,7 @@ body.details-page {
     margin-left: auto;
 
     &__header {
+        display: none;
         transform: translateY(-1.5rem);
 
         .card {
@@ -71,6 +72,7 @@ body.details-page {
     }
 
     &__content {
+        display: none;
         .card {
             padding-top: 4rem;
             padding-right: 2.4rem;
@@ -164,7 +166,7 @@ body.details-page {
     height: 9.6rem;
     background-color: var(--apply_zone-bgcolor);
     border-radius: 0.6rem;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 

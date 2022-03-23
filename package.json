@@ -4,6 +4,11 @@
   "description": "",
   "source": ["src/index.html", "src/details.html"],
   "browserslist": "cover 99.5%",
+  "targets": {
+    "default": {
+      "distDir": "./dist-build"
+    }
+  },
   "scripts": {
     "sass": "sass scss:css --watch --style=expanded",
     "start": "parcel",
