@@ -93,7 +93,7 @@ const addJob = data => {
     jobWhenWhat.append(jobPostedAt, jobOval, jobContract);
 
     // Job title: position
-    const jobTitle = document.createElement("h3");
+    const jobTitle = document.createElement("h2");
     jobTitle.className = "card__title";
 
     // Job link
@@ -111,7 +111,7 @@ const addJob = data => {
     jobCompany.textContent = company;
 
     // Location
-    const jobLocation = document.createElement("h4");
+    const jobLocation = document.createElement("h3");
     jobLocation.className = "card__location";
     jobLocation.textContent = location;
 
